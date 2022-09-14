@@ -1,0 +1,46 @@
+*{
+    margin: 100;
+    padding: 100;
+}
+h1, h3, h5 {
+    text-align: center;
+    color: blue;
+    background-color: green;
+    
+
+  }
+  h2, h4{
+    text-align: center;
+    color: green;
+    background-color: blue;
+
+  }
+  
+span{
+    color: blue;
+}
+#sp1{
+    text-align: center;
+    color: red;
+    margin: 100px;
+    padding: 100px;
+    
+    
+}
+#titulo{
+    color: blueviolet;
+}
+#sp2{
+    color: brown;
+}
+
+p span{
+    color: blueviolet;
+}
+.fuente{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span::after{
+    content: " JavierL"'\A'; white-space: pre;
+}
