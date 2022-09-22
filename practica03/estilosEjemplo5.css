@@ -1,0 +1,66 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.h{
+    border: 10px;
+    background-color: grey;
+    color:white;
+    text-align: center;
+     height: 26vh;
+
+}
+
+.menu{
+    margin: 0;
+    border: 1px;
+    background-color:blue;
+    color:white;
+    text-align: center;
+     height: 7vh;
+    
+
+}
+
+.contenido{
+    border: 1px;
+    background-color: maroon;
+    color:white;
+    text-align: center;
+     height: 60vh;
+     width: 70vw;
+    
+
+    
+
+}
+
+.publicidad{
+    border: 1px;
+    background-color: aqua;
+    color:white;
+    text-align: center;
+     height: 60vh;
+     width: 30vw;
+     
+
+    
+
+}
+
+.pie{
+    border: 1px;
+    background-color: blue;
+    color:white;
+    text-align: center;
+     height: 7vh;
+    
+
+}
+
+.superPadre{
+    display: flex;
+
+}
+
