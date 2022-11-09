@@ -34,7 +34,7 @@ public class App {
             String datosFormulario = req.body();
             Usuario u = gson.fromJson(datosFormulario, Usuario.class);
             usuarios.put(u.getId(),u);
-            return null;
+            return "usuario agregado";
         });
 
     }
