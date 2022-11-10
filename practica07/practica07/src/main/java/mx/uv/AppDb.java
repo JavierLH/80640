@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Hello world!
  *
  */
-public class App {
+public class AppDb {
     public static Gson gson = new Gson();
     //base de datos en memoria
     public static Map<String, Usuario> usuarios = new HashMap<>();
@@ -30,7 +30,7 @@ public class App {
         get("/usuario",(req,res) -> gson.toJson(u1));
         get("/usuarios",(req,res) -> gson.toJson(usuarios));
 
-        post("/addNewUser", (req, res)->{
+        post("/", (req, res)->{
             String datosFormulario = req.body();
             Usuario u = gson.fromJson(datosFormulario, Usuario.class);
             usuarios.put(u.getId(),u);
@@ -40,3 +40,4 @@ public class App {
     }
 
 }
+
