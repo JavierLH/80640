@@ -2,7 +2,9 @@ package mx.uv.c80640;
 
 import static spark.Spark.*;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 /**
  * Hello world!
@@ -27,9 +29,6 @@ public class App {
 
 
         get("/hello", (req, res) -> "Hello World");
-        get("/eduardo", (req, res) -> "Hello Eduardo");
-        get("/alex", (req, res) -> "Hello Alex");
-        get("/brandon", (req, res) -> "Hello Brandon");
         get("/", (req, res) -> "<h1>Bienvenido</h1><img src='https://www.uv.mx/v2/images/logouv.jpg'>");
         get("/", (req, res) -> "hola");
         
@@ -37,10 +36,20 @@ public class App {
             System.out.println(req.queryParams("email") + " " + 
                 req.queryParams("password"));
             System.out.println(req.body());
+
+            JsonParser parser  = new JsonParser();
+            JsonElement arbol = parser.parse(req.body());
+            JsonObject peticion = arbol.getAsJsonObject();
+            //peticion.get("email");
+            System.out.println(peticion.get("email"));
+            System.out.println(peticion.get("password"));
+            System.out.println(parser);
+
             res.status(200);// Codigo de respuesta
             JsonObject oRespuesta = new JsonObject();
             oRespuesta.addProperty("msj", "Hola");
-            oRespuesta.addProperty("email", req.queryParams("email"));
+            //oRespuesta.addProperty("email", req.queryParams("email"));
+            oRespuesta.addProperty("email",peticion.get("email").getAsString());
             return oRespuesta;
         });
 
